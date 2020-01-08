@@ -31,24 +31,7 @@ or, to build the full suite of utilities:
 ```shell
 make all
 ```
-
-## Executables
-
-The go-ethereum project comes with several wrappers/executables found in the `cmd`
-directory.
-
-|    Command    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| :-----------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  **`geth`**   | Our main Ethereum CLI client. It is the entry point into the Ethereum network (main-, test- or private net), capable of running as a full node (default), archive node (retaining all historical state) or a light node (retrieving data live). It can be used by other processes as a gateway into the Ethereum network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `geth --help` and the [CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options) for command line options.          |
-
-## Running `geth`
-
-Going through all the possible command line flags is out of scope here (please consult our
-[CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)),
-but we've enumerated a few common parameter combos to get you up to speed quickly
-on how you can run your own `geth` instance.
-
-### Main Node of IONIXx setup
+### Node setup
 
 By far the most common scenario is people wanting to simply interact with the Ethereum
 network: create accounts; transfer funds; deploy and interact with contracts. For this
@@ -56,13 +39,17 @@ particular use-case the user doesn't care about years-old historical data, so we
 fast-sync quickly to the current state of the network. To do so:
 
 ```shell
-$ geth --networkid 633828 --datadir .ionixx --mine console
+$ geth --networkid 633828 --datadir .ionixx --mine --miner.threads 2 --bootnodes <enode-url>
+```
+It will start the mining process.If you want to access the block chain use
+```shell
+$ geth --networkid 633828 --datadir .ionixx --bootnodes <enode-url> console
 ```
 
 This command will:
  * Start `geth` in fast sync mode (default, can be changed with the `--syncmode` flag),
    causing it to download more data in exchange for avoiding processing the entire history
-   of the Ethereum network, which is very CPU intensive.
+   of the Main Node (ionixx)
  * Start up `geth`'s built-in interactive [JavaScript console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console),
    (via the trailing `console` subcommand) through which you can invoke all official [`web3` methods](https://github.com/ethereum/wiki/wiki/JavaScript-API)
    as well as `geth`'s own [management APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs).
@@ -179,13 +166,59 @@ ones either). To start a `geth` instance for mining, run it with all your usual 
 by:
 
 ```shell
-$ geth --datadir ".ionixx" --networkid 633828 --mine --miner.threads=2 --etherbase=0x0000000000000000000000000000000000000000
+$ geth --datadir ".ionixx" --networkid 633828 --mine --miner.threads=2 --etherbase=0x<address>
 ```
-Before mentioning the etherbase account you should create a account in your node, use
+Note : `<address>` is address of the etherbase address which is returned while `make geth` command.
+
+Or manually you can start the mining without mentioning above `--mine`, `--miner.threads`, `--etherbase`.
+In terminal, 
 ```shell
-$ geth --datadir ".ionixx" account new
+geth --datadir ".ionixx" --networkid 633828 console
+> miner.start()
 ```
-And it will prompt to you to set a passphrase. Then it will return the address of the account.
+It will give a geth console
+
+## Console Commands
+### admin
+To check node informations
+```shell
+> admin.nodeInfo
+```
+### miner
+To start mining,
+```shell
+> miner.start()
+    or 
+> miner.start(<int>)        #<int> is used to specify number of threads
+```
+To stop mining,
+```shell
+> miner.stop()
+```
+To change the etherbase,
+```shell
+> miner.setEtherbase(<address>)
+```
+### eth
+To check the etherbase account,
+```shell
+> eth.coinbase
+```
+To check the account list
+```shell
+> eth.accounts
+> eth.accounts[<int: index>]       #It also supports indexing
+```
+To send Transaction
+```shell
+> eth.sendTransaction({from: <address>, to: <address>, value: <int: wei>, data: <
+```
+
+### personal
+To create new account,
+```shell
+> personal.newAccount
+```
 
 Which will start mining blocks and transactions on a single CPU thread, crediting all
 proceedings to the account specified by `--etherbase`. You can further tune the mining
