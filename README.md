@@ -13,7 +13,7 @@ Automated builds are available for stable releases and the unstable master branc
 archives are published at https://geth.ethereum.org/downloads/.
 
 ## Building the source
-Clone the repository from (https://github.com/vivek-tamilarasan/go-ethereum) or use
+Clone the repository from https://github.com/vivek-tamilarasan/go-ethereum or use
 ```shell
 git clone https://github.com/vivek-tamilarasan/go-ethereum.git
 ```
@@ -55,26 +55,6 @@ This command will:
    as well as `geth`'s own [management APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs).
    This tool is optional and if you leave it out you can always attach to an already running
    `geth` instance with `geth attach`.
-
-#### Docker quick start
-
-One of the quickest ways to get Ethereum up and running on your machine is by using
-Docker:
-
-```shell
-docker run -d --name ethereum-node -v /Users/alice/ethereum:/root \
-           -p 8545:8545 -p 30303:30303 \
-           ethereum/client-go
-```
-
-This will start `geth` in fast-sync mode with a DB memory allowance of 1GB just as the
-above command does.  It will also create a persistent volume in your home directory for
-saving your blockchain as well as map the default ports. There is also an `alpine` tag
-available for a slim version of the image.
-
-Do not forget `--rpcaddr 0.0.0.0`, if you want to access RPC from other containers
-and/or hosts. By default, `geth` binds to the local interface and RPC endpoints is not
-accessible from the outside.
 
 ### Programmatically interfacing `geth` nodes
 
@@ -149,7 +129,7 @@ by:
 ```shell
 $ geth --datadir ".ionixx" --networkid 633828 --mine --miner.threads 2 --etherbase 0x<address>
 ```
-Note : `<address>` is address of the etherbase address which is returned while `make geth` command.
+Note : `<address>` is address of the etherbase account which is created while `make geth` command.
 
 Or manually you can start the mining without mentioning above `--mine`, `--miner.threads`, `--etherbase`.
 In terminal, 
@@ -219,4 +199,4 @@ by changing the default gas limit blocks converge to (`--targetgaslimit`) and th
 transactions are accepted at (`--gasprice`).
 
 ## Block Explorer
-You can check block explorer in http://34.231.117.156:64226/#/
+You can check block explorer in [BLock Explorer](http://34.231.117.156:64226/#/)
