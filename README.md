@@ -165,6 +165,14 @@ To check node informations
 ```shell
 > admin.nodeInfo
 ```
+To add peers manually
+```shell
+> admin.addPeer(<enode_url_of_node>)
+```
+To check the online peers
+```shell
+> admin.peers
+```
 ### miner
 To start mining,
 ```shell
@@ -198,7 +206,11 @@ To send Transaction
 ### personal
 To create new account,
 ```shell
-> personal.newAccount
+> personal.newAccount       #Dont forget the passphrase
+```
+To unlock the account
+```shell
+> personal.unlockAccount(<address>)
 ```
 
 Which will start mining blocks and transactions on a single CPU thread, crediting all
@@ -206,3 +218,5 @@ proceedings to the account specified by `--etherbase`. You can further tune the 
 by changing the default gas limit blocks converge to (`--targetgaslimit`) and the price
 transactions are accepted at (`--gasprice`).
 
+## Block Explorer
+You can check block explorer in http://34.231.117.156:64226/#/
