@@ -15,6 +15,10 @@ geth:
 	build/env.sh go run build/ci.go install ./cmd/geth
 	@echo "Done building."
 	@echo "Run \"$(GOBIN)/geth\" to launch geth."
+	geth --datadir ".ionixx" init genesis.json
+	@echo "Genesis Initialized"
+	geth --datadir ".ionixx" account new
+	@echo "Etherbase setup done"
 
 all:
 	build/env.sh go run build/ci.go install
