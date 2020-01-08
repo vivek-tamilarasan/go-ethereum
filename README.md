@@ -39,11 +39,11 @@ particular use-case the user doesn't care about years-old historical data, so we
 fast-sync quickly to the current state of the network. To do so:
 
 ```shell
-$ geth --networkid 633828 --datadir .ionixx --mine --miner.threads 2 --bootnodes <enode-url>
+$ geth --networkid 633828 --datadir .ionixx --mine --miner.threads 2 --bootnodes "enode://4de48703b0d8b9f0a5fd59e1465e9c3213e6768b2e9b3663b8dc4d16af0fb92e434ccc082337bfcfaaa47348a0f35cb7473a392f6a8f6c95f075136e6f51a07e@34.231.117.156:30303"
 ```
 It will start the mining process.If you want to access the block chain use
 ```shell
-$ geth --networkid 633828 --datadir .ionixx --bootnodes <enode-url> console
+$ geth --networkid 633828 --datadir .ionixx --bootnodes "enode://4de48703b0d8b9f0a5fd59e1465e9c3213e6768b2e9b3663b8dc4d16af0fb92e434ccc082337bfcfaaa47348a0f35cb7473a392f6a8f6c95f075136e6f51a07e@34.231.117.156:30303" console
 ```
 
 This command will:
@@ -146,7 +146,7 @@ probably also be desirable to keep the data directory of your private network se
 do also specify a custom `--datadir` flag.
 
 ```shell
-$ geth --datadir ".ionixx" --networkid 633828 --bootnodes=<bootnode-enode-url-from-above>
+$ geth --datadir ".ionixx" --networkid 633828 --bootnodes <bootnode-enode-url-from-above>
 ```
 
 *Note: Since your network will be completely cut off from the main and test networks, you'll
@@ -166,7 +166,7 @@ ones either). To start a `geth` instance for mining, run it with all your usual 
 by:
 
 ```shell
-$ geth --datadir ".ionixx" --networkid 633828 --mine --miner.threads=2 --etherbase=0x<address>
+$ geth --datadir ".ionixx" --networkid 633828 --mine --miner.threads 2 --etherbase 0x<address>
 ```
 Note : `<address>` is address of the etherbase address which is returned while `make geth` command.
 
