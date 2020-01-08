@@ -39,11 +39,11 @@ particular use-case the user doesn't care about years-old historical data, so we
 fast-sync quickly to the current state of the network. To do so:
 
 ```shell
-$ geth --networkid 633828 --datadir .ionixx --mine --miner.threads 2 --bootnodes "enode://4de48703b0d8b9f0a5fd59e1465e9c3213e6768b2e9b3663b8dc4d16af0fb92e434ccc082337bfcfaaa47348a0f35cb7473a392f6a8f6c95f075136e6f51a07e@34.231.117.156:30303"
+$ geth --networkid 633828 --datadir .ionixx --mine --miner.threads 2 --bootnodes "enode://9ea1a4efa9cf17cd66cdcbf954645f992c4af8a352c1149e0d89ac9205d479a2ff0b925039eac093e6d688a59f9ab10611beb85e7a749443e95dd2aa5782a4cb@34.231.117.156:64264"
 ```
 It will start the mining process.If you want to access the block chain use
 ```shell
-$ geth --networkid 633828 --datadir .ionixx --bootnodes "enode://4de48703b0d8b9f0a5fd59e1465e9c3213e6768b2e9b3663b8dc4d16af0fb92e434ccc082337bfcfaaa47348a0f35cb7473a392f6a8f6c95f075136e6f51a07e@34.231.117.156:30303" console
+$ geth --networkid 633828 --datadir .ionixx --bootnodes "enode://9ea1a4efa9cf17cd66cdcbf954645f992c4af8a352c1149e0d89ac9205d479a2ff0b925039eac093e6d688a59f9ab10611beb85e7a749443e95dd2aa5782a4cb@34.231.117.156:64264" console
 ```
 
 This command will:
