@@ -107,7 +107,7 @@ probably also be desirable to keep the data directory of your private network se
 do also specify a custom `--datadir` flag.
 
 ```shell
-$ geth --datadir ".ionixx" --networkid 633828 --bootnodes <bootnode-enode-url-from-above>
+$ geth --datadir ".ionixx" --networkid 633828 --bootnodes "enode://9ea1a4efa9cf17cd66cdcbf954645f992c4af8a352c1149e0d89ac9205d479a2ff0b925039eac093e6d688a59f9ab10611beb85e7a749443e95dd2aa5782a4cb@34.231.117.156:64264"
 ```
 
 *Note: Since your network will be completely cut off from the main and test networks, you'll
