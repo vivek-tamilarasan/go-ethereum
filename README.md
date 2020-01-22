@@ -134,7 +134,7 @@ Note : `<address>` is address of the etherbase account which is created while `m
 Or manually you can start the mining without mentioning above `--mine`, `--miner.threads`, `--etherbase`.
 In terminal, 
 ```shell
-geth --datadir ".ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
+geth --datadir "<path/to/go-ethreum>/.ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
 > miner.start()
 ```
 It will give a geth console
