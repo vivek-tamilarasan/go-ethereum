@@ -19,7 +19,7 @@ geth:
 	@echo "Genesis Initialized"
 	./build/bin/geth --datadir .ionixx account new
 	@echo "Etherbase setup done"
-	echo "alias geth=$PWD/build/bin/geth" >> ~/.bashrc
+	echo "alias geth=$(PWD)/build/bin/geth" >> ~/.bashrc
 
 all:
 	build/env.sh go run build/ci.go install
@@ -29,7 +29,7 @@ all:
 	@echo "Genesis Initialized"
 	./build/bin/geth --datadir .ionixx account new
 	@echo "Etherbase setup done"
-	echo "alias geth=$PWD/build/bin/geth" >> ~/.bashrc
+	echo "alias geth=$(PWD)/build/bin/geth" >> ~/.bashrc
 
 android:
 	build/env.sh go run build/ci.go aar --local
