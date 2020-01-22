@@ -1,0 +1,38 @@
+=============== Jan 21, 2020 (IST) ===============
+16:26:39.466257 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:26:39.514283 db@open opening
+16:26:39.514690 version@stat F·[] S·0B[] Sc·[]
+16:26:39.547914 db@janitor F·2 G·0
+16:26:39.547953 db@open done T·33.635874ms
+16:27:06.785882 db@close closing
+16:27:06.785949 db@close done T·65.993µs
+=============== Jan 21, 2020 (IST) ===============
+16:27:49.060131 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:27:49.060254 version@stat F·[] S·0B[] Sc·[]
+16:27:49.060267 db@open opening
+16:27:49.060306 journal@recovery F·1
+16:27:49.060400 journal@recovery recovering @1
+16:27:49.089488 memdb@flush created L0@2 N·3 S·188B "n:\x8a..seq,v3":"version,v1"
+16:27:49.089727 version@stat F·[1] S·188B[188B] Sc·[0.25]
+16:27:49.173641 db@janitor F·3 G·0
+16:27:49.173689 db@open done T·113.412473ms
+16:28:35.458453 db@close closing
+16:28:35.458590 db@close done T·134.587µs
+=============== Jan 22, 2020 (IST) ===============
+12:49:57.652722 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:49:57.666612 version@stat F·[1] S·188B[188B] Sc·[0.25]
+12:49:57.666636 db@open opening
+12:49:57.666691 journal@recovery F·1
+12:49:57.666800 journal@recovery recovering @3
+12:49:57.699082 memdb@flush created L0@5 N·2 S·172B "n:\x8a..seq,v6":"n:\x8a..seq,v5"
+12:49:57.699410 version@stat F·[2] S·360B[360B] Sc·[0.50]
+12:49:57.791535 db@janitor F·4 G·0
+12:49:57.791570 db@open done T·124.925771ms
+12:56:13.809033 table@compaction L0·2 -> L1·0 S·360B Q·9
+12:56:13.854486 table@build created L1@8 N·2 S·180B "n:\x8a..seq,v6":"version,v1"
+12:56:13.854572 version@stat F·[0 1] S·180B[0B 180B] Sc·[0.00 0.00]
+12:56:13.887961 table@compaction committed F-1 S-180B Ke·0 D·3 T·78.863097ms
+12:56:13.888067 table@remove removed @5
+12:56:13.888120 table@remove removed @2
+13:02:19.643130 db@close closing
+13:02:19.643221 db@close done T·89.576µs

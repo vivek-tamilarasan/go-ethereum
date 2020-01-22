@@ -22,6 +22,12 @@ geth:
 
 all:
 	build/env.sh go run build/ci.go install
+	@echo "Done building."
+	@echo "Run \"$(GOBIN)/geth\" to launch geth."
+	./build/bin/geth --datadir .ionixx init genesis.json
+	@echo "Genesis Initialized"
+	./build/bin/geth --datadir .ionixx account new
+	@echo "Etherbase setup done"
 
 android:
 	build/env.sh go run build/ci.go aar --local
