@@ -39,11 +39,11 @@ particular use-case the user doesn't care about years-old historical data, so we
 fast-sync quickly to the current state of the network. To do so:
 
 ```shell
-$ geth --networkid 633828 --datadir <path/to/go-ethreum>/.ionixx --bootnodes "enode://0e082dcdc1f781b25508d5e51a4f5d11fd9f62b83c72510f7a403ef0e920a2dd7c1048579b35673b6e4e60d5a242947ca442de3f228b7c9837dc52d58745783d@34.231.117.156:64246"
+$ geth --networkid 633828 --datadir <path/to/go-ethreum>/.ionixx --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246"
 ```
 It will start the node. To run with console use,
 ```shell
-$ geth --networkid 633828 --datadir <path/to/go-ethreum>/.ionixx --bootnodes "enode://0e082dcdc1f781b25508d5e51a4f5d11fd9f62b83c72510f7a403ef0e920a2dd7c1048579b35673b6e4e60d5a242947ca442de3f228b7c9837dc52d58745783d@34.231.117.156:64246" console
+$ geth --networkid 633828 --datadir <path/to/go-ethreum>/.ionixx --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
 ```
 
 This command will:
@@ -107,7 +107,7 @@ probably also be desirable to keep the data directory of your private network se
 do also specify a custom `--datadir` flag.
 
 ```shell
-$ geth --datadir "<path/to/go-ethreum>/.ionixx" --networkid 633828 --bootnodes "enode://0e082dcdc1f781b25508d5e51a4f5d11fd9f62b83c72510f7a403ef0e920a2dd7c1048579b35673b6e4e60d5a242947ca442de3f228b7c9837dc52d58745783d@34.231.117.156:64246"
+$ geth --datadir "<path/to/go-ethreum>/.ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246"
 ```
 
 *Note: Since your network will be completely cut off from the main and test networks, you'll
@@ -127,14 +127,14 @@ ones either). To start a `geth` instance for mining, run it with all your usual 
 by:
 
 ```shell
-$ geth --datadir "<path/to/go-ethreum>/.ionixx" --networkid 633828 --mine --miner.threads 2 --bootnodes "enode://0e082dcdc1f781b25508d5e51a4f5d11fd9f62b83c72510f7a403ef0e920a2dd7c1048579b35673b6e4e60d5a242947ca442de3f228b7c9837dc52d58745783d@34.231.117.156:64246" 
+$ geth --datadir "<path/to/go-ethreum>/.ionixx" --networkid 633828 --mine --miner.threads 2 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" 
 ```
 Note : `<address>` is address of the etherbase account which is created while `make geth` command.
 
 Or manually you can start the mining without mentioning above `--mine`, `--miner.threads`, `--etherbase`.
 In terminal, 
 ```shell
-geth --datadir ".ionixx" --networkid 633828 --bootnodes "enode://0e082dcdc1f781b25508d5e51a4f5d11fd9f62b83c72510f7a403ef0e920a2dd7c1048579b35673b6e4e60d5a242947ca442de3f228b7c9837dc52d58745783d@34.231.117.156:64246" console
+geth --datadir ".ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
 > miner.start()
 ```
 It will give a geth console
