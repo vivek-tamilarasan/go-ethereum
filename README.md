@@ -45,16 +45,16 @@ It will start the node. To run with console use,
 ```shell
 $ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
 ```
-*Note: 
-    1. Don't start the Mining process before Block synchronisation starts
-    2. If the boot node was not connected, in console use,
-        ```shell
-        > admin.addPeer("enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246")
-        ```
-    3. To check the connected peers, in console use,
-        ```shell
-        > admin.peers()
-        ```*
+### Note 
+* Don't start the Mining process before Block synchronisation starts
+* If the boot node was not connected, in console use,
+  ```shell
+  > admin.addPeer("enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246")
+  ```
+* To check the connected peers, in console use,
+  ```shell
+  > admin.peers()
+  ```
 
 This command will:
  * Start `geth` in fast sync mode (default, can be changed with the `--syncmode` flag),
