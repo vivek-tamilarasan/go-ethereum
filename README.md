@@ -39,11 +39,11 @@ particular use-case the user doesn't care about years-old historical data, so we
 fast-sync quickly to the current state of the network. To do so:
 
 ```shell
-$ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx
+$ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx --mine
 ```
 It will start the node. To run with console use,
 ```shell
-$ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
+$ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx console
 ```
 ### Note 
 * Don't start the Mining process before Block synchronisation starts
@@ -79,6 +79,14 @@ The IPC interface is enabled by default and exposes all the APIs supported by `g
 whereas the HTTP and WS interfaces need to manually be enabled and only expose a
 subset of APIs due to security reasons. These can be turned on/off and configured as
 you'd expect.
+
+Geth Basic flags
+* `--port` Used to mention the TCP port of the geth
+* `--mine` Start mining process
+* `--miner.threads` Used to mention thread count for miner
+* `--nodiscover` Hide your node from auto discovery
+* `--etherbase` Mention the coinbase address
+
 
 HTTP based JSON-RPC API options:
   * `--networkid` Connect with the ionixx private network(*required)
@@ -117,7 +125,7 @@ probably also be desirable to keep the data directory of your private network se
 do also specify a custom `--datadir` flag.
 
 ```shell
-geth --datadir "<path/to/go-ethereum>/.ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246"
+geth --datadir "<path/to/go-ethereum>/.ionixx" --networkid 633828 --bootnodes <enode-url>
 ```
 
 *Note: Since your network will be completely cut off from the main and test networks, you'll
@@ -137,14 +145,12 @@ ones either). To start a `geth` instance for mining, run it with all your usual 
 by:
 
 ```shell
-geth --datadir "<path/to/go-ethereum>/.ionixx" --networkid 633828 --mine --miner.threads 2 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" 
+geth --datadir "<path/to/go-ethereum>/.ionixx" --networkid 633828 --mine 
 ```
-Note : `<address>` is address of the etherbase account which is created while `make geth` command.
-
-Or manually you can start the mining without mentioning above `--mine`, `--miner.threads`, `--etherbase`.
+Or manually you can start the mining without mentioning above `--mine`.
 In terminal, 
 ```shell
-geth --datadir "<path/to/go-ethereum>/.ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
+geth --datadir "<path/to/go-ethereum>/.ionixx" --networkid 633828 console
 ```
 It will give a geth console, use,
 ```shell
