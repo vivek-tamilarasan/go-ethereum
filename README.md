@@ -45,6 +45,16 @@ It will start the node. To run with console use,
 ```shell
 $ geth --networkid 633828 --datadir <path/to/go-ethreum>/.ionixx --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
 ```
+*Note: 
+    1. Don't start the Mining process before Block synchronisation starts
+    2. If the boot node was not connected, in console use,
+        ```shell
+        > admin.addPeer("enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246")
+        ```
+    3. To check the connected peers, in console use,
+        ```shell
+        > admin.peers()
+        ```*
 
 This command will:
  * Start `geth` in fast sync mode (default, can be changed with the `--syncmode` flag),
@@ -135,9 +145,15 @@ Or manually you can start the mining without mentioning above `--mine`, `--miner
 In terminal, 
 ```shell
 geth --datadir ".ionixx" --networkid 633828 --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246" console
+```
+It will give a geth console, use,
+```shell
 > miner.start()
 ```
-It will give a geth console
+Which will start mining blocks and transactions on a single CPU thread, crediting all
+proceedings to the account specified by `--etherbase`. You can further tune the mining
+by changing the default gas limit blocks converge to (`--targetgaslimit`) and the price
+transactions are accepted at (`--gasprice`).
 
 ## Console Commands
 ### admin
@@ -180,23 +196,19 @@ To check the account list
 ```
 To send Transaction
 ```shell
-> eth.sendTransaction({from: <address>, to: <address>, value: <int: wei>, data: <
+> eth.sendTransaction({from: <address>, to: <address>, value: <int: wei>, data: <hex encoded>})
 ```
-
 ### personal
 To create new account,
 ```shell
-> personal.newAccount       #Dont forget the passphrase
+> personal.newAccount       #Dont forget the pass_phrase
 ```
 To unlock the account
 ```shell
 > personal.unlockAccount(<address>)
 ```
 
-Which will start mining blocks and transactions on a single CPU thread, crediting all
-proceedings to the account specified by `--etherbase`. You can further tune the mining
-by changing the default gas limit blocks converge to (`--targetgaslimit`) and the price
-transactions are accepted at (`--gasprice`).
+To know additional commands refer [Geth Commands](https://geth.ethereum.org/docs/rpc/ns-admin)
 
 ## Block Explorer
 You can check block explorer in [BLock Explorer](http://34.231.117.156:64226/#/)
