@@ -39,7 +39,7 @@ particular use-case the user doesn't care about years-old historical data, so we
 fast-sync quickly to the current state of the network. To do so:
 
 ```shell
-$ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx --bootnodes "enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246"
+$ geth --networkid 633828 --datadir <path/to/go-ethereum>/.ionixx
 ```
 It will start the node. To run with console use,
 ```shell

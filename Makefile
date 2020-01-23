@@ -19,6 +19,7 @@ geth:
 	@echo "Genesis Initialized"
 	./build/bin/geth --datadir .ionixx account new
 	@echo "Etherbase setup done"
+	printf "[\n\"enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246\"\n]" > .ionixx/static-nodes.json
 	echo "alias geth=$(PWD)/build/bin/geth" >> ~/.bashrc
 
 all:
@@ -29,6 +30,7 @@ all:
 	@echo "Genesis Initialized"
 	./build/bin/geth --datadir .ionixx account new
 	@echo "Etherbase setup done"
+	printf "[\n\"enode://9d902d911bbe61305e4feaa8b7627f69f08dc264d970fb36731f1078dd49dec17a81f9bc1797f16b82ae72bd73cff845e38195b6ab529ca22e2576ba4f603ace@34.231.117.156:64246\"\n]" > .ionixx/static-nodes.json
 	echo "alias geth=$(PWD)/build/bin/geth" >> ~/.bashrc
 
 android:
